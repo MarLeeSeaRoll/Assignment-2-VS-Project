@@ -4,6 +4,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <iomanip>
 #include "LinkedList.h"
 #include "Student.h"
 
@@ -70,8 +71,25 @@ double calculateAverageMarks(const LinkedList<Student>& studentList) {
         current = current->next;
     }
 
-    return (count == 0) ? 0 : totalMarks / count;
+    return totalMarks / count;
 }
+void calculatePassRate(const LinkedList<Student>& studentList) {
+    double passCount = 0;
+    double count = 0;
+    double convertToPercentage = 100;
+    Node<Student>* current = studentList.getHead();
+    while (current != NULL) {
+        count++;
+        string grade = current->data.getGrade();
+        if (grade != "D" && grade != "E") {
+            passCount++;
+        }
+        current = current->next;
+    }
+
+    cout<<"The pass rate of this course is "<< fixed << setprecision(2) << passCount / count * convertToPercentage<<"%"<<endl;
+}
+
 
 Student* getHighestScorer(LinkedList<Student>& studentList) {
     if (!studentList.getHead())

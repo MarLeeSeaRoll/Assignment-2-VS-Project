@@ -35,23 +35,35 @@ public:
 		return totalMarks;
 	}
 
-	char getGrade() const {
-		if (totalMarks >= 80)
+	string getGrade() const {
+		if (totalMarks >= 85)
 		{
-			return 'A';
+			return "A+ ";
 		}
-		else if (totalMarks >= 65)
+		else if (totalMarks >= 78)
 		{
-			return 'B';
+			return "A";
 		}
-		else if (totalMarks >= 50)
+		else if (totalMarks >= 71)
 		{
-			return 'C';
+			return "B+";
+		}
+		else if (totalMarks >= 64)
+		{
+			return "B";
+		}
+		else if (totalMarks >= 57)
+		{
+			return "C+";
+		}
+		else if (totalMarks >= 50) {
+			return "C";
+		}
+		else if (totalMarks >= 40) {
+			return "D";
 		}
 		else
-		{
-			return 'F';
-		}
+			return "E";
 	}
 
 	void updateMarks(double coursework, double finalExam) {

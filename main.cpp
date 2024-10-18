@@ -90,8 +90,7 @@ int main() {
             }
 
             case 5: {
-                double average = calculateAverageMarks(studentList);
-                cout << "Average Marks: " << average << endl;
+                calculatePassRate(studentList);
                 break;
             }
             
