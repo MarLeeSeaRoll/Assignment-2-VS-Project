@@ -2,7 +2,6 @@
 #define UTILITIES_H
 
 #include <fstream>
-#include <sstream>
 #include <string>
 #include <iomanip>
 #include "LinkedList.h"
@@ -13,7 +12,9 @@ void programStartQuit(bool& continueExecuting);
 
 void readFileAndStoreData(LinkedList<Student>& studentList, const string& filename);
 
-double calculateAverageMarks(const LinkedList<Student>& studentList);
+void calculateAverageMarks(const LinkedList<Student>& studentList);
+
+void calculatePassRate(const LinkedList<Student>& studentList);
 
 Student* getHighestScorer(LinkedList<Student>& studentList);
 
@@ -60,7 +61,7 @@ void readFileAndStoreData(LinkedList<Student>& studentList, const string& filena
     file.close();
 }
 
-double calculateAverageMarks(const LinkedList<Student>& studentList) {
+void calculateAverageMarks(const LinkedList<Student>& studentList) {
     double totalMarks = 0.0;
     int count = 0;
 
@@ -71,7 +72,7 @@ double calculateAverageMarks(const LinkedList<Student>& studentList) {
         current = current->next;
     }
 
-    return totalMarks / count;
+    cout << "The average mark of this course is " << fixed << setprecision(2) << totalMarks / count<< endl;
 }
 void calculatePassRate(const LinkedList<Student>& studentList) {
     double passCount = 0;

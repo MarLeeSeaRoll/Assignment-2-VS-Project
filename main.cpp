@@ -84,8 +84,7 @@ int main() {
             }
 
             case 4: {
-                double average = calculateAverageMarks(studentList);
-                cout << "Average Marks: " << average << endl;
+                calculateAverageMarks(studentList);
                 break;
             }
 
