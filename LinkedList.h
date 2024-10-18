@@ -49,7 +49,7 @@ public:
 	}
 
 	// Find a student by ID
-	T* findById(const string& id) {
+	T* findById(string id) {
 		Node<T>* temp = head;
 		while (temp) {
 			if (temp->data.getId() == id) {

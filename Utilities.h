@@ -105,7 +105,7 @@ V ValidateUpdateMarks(V lowerLimit, V upperLimit)
         {
             cin.clear();
             string dummy;
-            cin >> dummy;
+            getline(cin,dummy);
             cout << "ERROR! Invalid option detected." << endl;
             cout << "Please enter a number." << endl;
         }
