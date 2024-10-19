@@ -26,7 +26,7 @@ int main() {
 
 		switch (choice) {
 		case 1:
-			studentList.printAll();
+			printAll(studentList);
 			break;
 
 		case 2: {
@@ -65,7 +65,7 @@ int main() {
 
 				student->updateMarks(coursework, finalExam);
 				cout << "Marks updated!\n";
-				studentList.printAll();
+				printAll(studentList);
 			}
 			else
 			{

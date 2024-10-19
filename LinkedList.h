@@ -61,51 +61,15 @@ public:
 		return NULL;
 	}
 
-	// Print all student data
-	void printAll() const {
+	// Destructor to clean up memory
+	~LinkedList() {
 		Node<T>* temp = head;
-		cout << "ID        CW Marks   FE Marks   Total      Grade\n";
-		cout << "----------------------------------------------\n";
-
-		double totalMarks = 0.0;
-		double count = 0;
-		double passCount = 0;
-		double convertToPercentage = 100.0;
-		Node<T>* topStudent = NULL;
-
 		while (temp) {
-			temp->data.print();
-			totalMarks += temp->data.getTotalMarks();
-			count++;
-			if (temp->data.getGrade() != "D" && temp->data.getGrade() != "E") {
-				passCount++;
-			}
-		if (!topStudent || temp->data.getTotalMarks() > topStudent->data.getTotalMarks()) {
-			topStudent = temp;
+			Node<T>* next = temp->next;
+			delete temp;
+			temp = next;
 		}
-
-		temp = temp->next;
 	}
-	double averageMarks = totalMarks / count;
-	double passRate = passCount / count * convertToPercentage;
-	cout << "\nAverage Marks: " << fixed << setprecision(2) << averageMarks << endl;
-	cout << "Pass Rate: " << fixed << setprecision(2) << passRate << "%" << endl;
-	cout << "\nHighest Scorer:\n";
-	cout << "ID        CW Marks   FE Marks   Total      Grade\n";
-	cout << "----------------------------------------------\n";
-	topStudent->data.print();
-	cout << endl;
-}
-
-// Destructor to clean up memory
-~LinkedList() {
-	Node<T>* temp = head;
-	while (temp) {
-		Node<T>* next = temp->next;
-		delete temp;
-		temp = next;
-	}
-}
 };
 
 #endif
