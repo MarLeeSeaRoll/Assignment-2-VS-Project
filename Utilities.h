@@ -1,3 +1,4 @@
+//This is the file including all functionalities of this program
 #ifndef UTILITIES_H
 #define UTILITIES_H
 
@@ -7,20 +8,25 @@
 #include "LinkedList.h"
 #include "Student.h"
 
-// Function Prototypes
+			// Function Prototypes
+//Function to decide whether to start or quit program
 void programStartQuit(bool& continueExecuting);
 
+//Function to read data from file
 void readFileAndStoreData(LinkedList<Student>& studentList, const string& filename);
 
+//Function to validate menu options input and marks input
 template <typename V>
 V ValidateUpdateMarks(V lowerLimit, V upperLimit);
 
+//Function to print all studetn details, average mark, pass rate and the detail of highest scorer
 void printAll(const LinkedList<Student>& studentList);
 
+//Function to look up student by student ID
 Student* findById(const LinkedList<Student>& studentList, const string& id);
 
-// Function Definitions
 
+// Function Definitions
 void programStartQuit(bool& continueExecuting)
 {
 	string userDecision;
@@ -44,7 +50,7 @@ void programStartQuit(bool& continueExecuting)
 		continueExecuting = false;
 	}
 }
-
+//Function body of read and store data from file
 void readFileAndStoreData(LinkedList<Student>& studentList, const string& filename) 
 {
 	ifstream file(filename);
@@ -68,7 +74,7 @@ void readFileAndStoreData(LinkedList<Student>& studentList, const string& filena
 }
 
 
-// Generic input validation function
+// Body of the generic input validation function
 template <typename V>
 V ValidateUpdateMarks(V lowerLimit, V upperLimit)
 {
