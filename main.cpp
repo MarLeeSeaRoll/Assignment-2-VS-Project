@@ -6,7 +6,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 	LinkedList<Student> studentList;
 
 	printWelcomeMessage();
@@ -24,12 +25,14 @@ int main() {
 		displayMenu();
 		choice = ValidateUpdateMarks<int>(1, 3);
 
-		switch (choice) {
+		switch (choice) 
+		{
 		case 1:
 			printAll(studentList);
 			break;
 
-		case 2: {
+		case 2: 
+			{
 			string id;
 			double coursework, finalExam;
 

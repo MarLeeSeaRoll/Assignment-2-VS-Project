@@ -2,7 +2,6 @@
 #define MESSAGES_H
 
 #include <fstream>
-#include <sstream>
 #include <string>
 #include <iostream>
 
@@ -17,7 +16,7 @@ void printWelcomeMessage()
 
 void displayMenu(){
         cout << "\nMenu:\n";
-        cout << "1. Print All Students\n";
+        cout << "1. Print Student Details\n";
         cout << "2. Update Student Marks\n";
         cout << "3. Exit\n";
         cout << "Enter your choice: ";

@@ -5,7 +5,8 @@
 #include <iomanip>
 using namespace std;
 
-class Student {
+class Student 
+{
 private:
 	string id;
 	double courseworkMarks;
@@ -13,25 +14,29 @@ private:
 	double totalMarks;
 
 public:
-	Student() {
+	Student() 
+	{
 		this->id = "";
 		this->courseworkMarks = 0;
 		this->finalExamMarks = 0;
 		this->totalMarks = 0;
 	}
 
-	Student(string id, double coursework, double finalExam) {
+	Student(string id, double coursework, double finalExam) 
+	{
 		this->id = id;
 		this->courseworkMarks = coursework;
 		this->finalExamMarks = finalExam;
 		this->totalMarks = courseworkMarks + finalExamMarks;
 	}
 
-	string getId() const {
+	string getId() const
+	{
 		return id;
 	}
 
-	double getTotalMarks() const {
+	double getTotalMarks() const 
+	{
 		return totalMarks;
 	}
 
@@ -56,23 +61,27 @@ public:
 		{
 			return "C+";
 		}
-		else if (totalMarks >= 50) {
+		else if (totalMarks >= 50)
+		{
 			return "C";
 		}
-		else if (totalMarks >= 40) {
+		else if (totalMarks >= 40) 
+		{
 			return "D";
 		}
 		else
 			return "E";
 	}
 
-	void updateMarks(double coursework, double finalExam) {
+	void updateMarks(double coursework, double finalExam) 
+	{
 		courseworkMarks = coursework;
 		finalExamMarks = finalExam;
 		totalMarks = courseworkMarks + finalExamMarks;
 	}
 
-	void print() const {
+	void print() const
+	{
 		cout << left << setw(10) << id
 			<< setw(10) << courseworkMarks
 			<< setw(10) << finalExamMarks
