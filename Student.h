@@ -22,7 +22,7 @@ public:
 		this->totalMarks = 0;
 	}
 
-	Student(string id, double coursework, double finalExam) 
+	void setAllData(string id, double coursework, double finalExam) 
 	{
 		this->id = id;
 		this->courseworkMarks = coursework;
@@ -33,6 +33,12 @@ public:
 	string getId() const
 	{
 		return id;
+	}
+	double getCourseWorkMarks() {
+		return courseworkMarks;
+	}
+	double getFinalExamMarks() {
+		return finalExamMarks;
 	}
 
 	double getTotalMarks() const 

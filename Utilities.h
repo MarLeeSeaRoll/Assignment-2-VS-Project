@@ -63,11 +63,12 @@ void readFileAndStoreData(LinkedList<Student>& studentList, const string& filena
 	double coursework, finalExam;
 	string id;
 	string line;
+	Student student;
 	getline(file, line);
 
 	while (file >> id >> coursework >> finalExam)
 	{
-		Student student(id, coursework, finalExam);
+		student.setAllData(id, coursework, finalExam);
 		studentList.insert(student);
 	}
 	file.close();
