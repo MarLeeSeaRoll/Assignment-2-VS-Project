@@ -10,12 +10,13 @@ The Student Grades Program is a C++ application designed to manage and analyze s
 
 Features
 
-Print Entire List of Students with Grades: Display all student data, including coursework, final exam marks, total marks, and grades.
+Print Entire List of Students with Grades: Display all student data, including coursework, final exam marks, total marks, grades，the average mark for the class，the percentage of students who passed and the details of the student with the highest total mark.
 Update Student's Marks: Search for a student by ID and update their coursework or final exam marks.
-Print Average Marks: Calculate and display the average mark for the class.
-Print Pass Rate: Calculate and display the percentage of students who passed (total marks ≥ 50).
-Print Highest Scorer's Details: Identify and display the details of the student with the highest total mark.
+Calculate Average Marks: Calculate  the average mark for the class.
+Calculate Pass Rate: Calculate  the percentage of students who passed (total marks ≥ 50).
+Identify Highest Scorer's Details: Identify the student with the highest total mark.
 Exit Program: Gracefully terminate the program, releasing all dynamically allocated memory.
+
 File Format
 
 Student data is read from a file called studentData.txt. This file should contain three columns:
@@ -46,15 +47,9 @@ Menu Options
 
 Upon running the program, a menu is presented with the following options:
 
-Print Entire List with Grades: Displays all students along with their coursework, final exam marks, total marks, and their computed grade.
+Print Entire List with Grades: Displays all students along with their coursework, final exam marks, total marks, their computed grade, the average mark, the pass rate of this course and highest scorer.
 
-Update Student's Marks: Prompts the user to search for a student by ID and allows updating either their coursework, final exam marks, or both.
-
-Print Average Marks: Calculates and displays the average marks for the class by summing all students' total marks and dividing by the number of students.
-
-Print Pass Rate: Displays the percentage of students who passed (total marks ≥ 50).
-
-Print the Highest Scorer's Details: Identifies the student with the highest total marks and displays their full details.
+Update Student's Marks: Prompts the user to search for a student by ID and allows updating either their coursework, final exam marks, or both and print all details.
 
 Exit Program: Exits the program, displaying a thank-you message and cleaning up allocated memory.
 
@@ -103,10 +98,7 @@ Main Menu:
 Menu:
 1. Print Entire List with Grades
 2. Update Student's Marks
-3. Print Average Marks
-4. Print Pass Rate
-5. Print the Highest Scorer's Details
-6. Exit Program
+3. Exit Program
 
 Enter the number corresponding to your choice:
 Sample Output - Print Entire List:
@@ -118,33 +110,31 @@ S00001               46.05               39.4                A
 S00002               23.6                12.4                E                   
 S00003               17.3                17.8                E                   
 ...
+Average Marks: 43.78
+Pass Rate: 40.00%
+
+Highest Scorer:
+ID        CW Marks   FE Marks   Total      Grade
+----------------------------------------------
+S00001    46.05     39.40     85.45     A+
+
 Program Logic
 
 Core Functions
 
 fillArray(string fileName, int& rows, node*& pHead):
-
 Reads the student data from studentData.txt and appends it to a doubly linked list.
+
 printEntireList(node* pHead):
+Prints all students in the list along with their coursework, final exam, total marks, calculated grade, calculated average mark, calculated pass rate and details of highest scorer.
 
-Prints all students in the list along with their coursework, final exam, total marks, and calculated grade.
 updateMark(node* pHead):
-
-Searches for a student by their ID and allows the user to update their coursework and/or final exam marks.
-printAverageMarks(node* pHead):
-
-Calculates and prints the average total mark for the class.
-printPassRate(node* pHead):
-
-Calculates and prints the percentage of students who passed.
-printHighestScorerDetails(node* pHead):
-
 Finds and prints the student with the highest total marks.
+
 Input Validation
-
 The program includes robust input validation to ensure the user enters valid options and that student IDs conform to the expected format.
-Exit and Cleanup
 
+Exit and Cleanup
 When the user selects "Exit", the program gracefully frees all allocated memory and displays a thank-you message.
 Conclusion
 
