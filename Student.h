@@ -1,3 +1,6 @@
+//The file including student class, 
+//grade calculate function, 
+//function of update mark and function of print student details
 #ifndef STUDENT_H
 #define STUDENT_H
 
@@ -34,19 +37,14 @@ public:
 	{
 		return id;
 	}
-	double getCourseWorkMarks() {
-		return courseworkMarks;
-	}
-	double getFinalExamMarks() {
-		return finalExamMarks;
-	}
 
 	double getTotalMarks() const 
 	{
 		return totalMarks;
 	}
 
-	string getGrade() const {
+	string getGrade() const 
+	{
 		if (totalMarks >= 85)
 		{
 			return "A+ ";
@@ -86,6 +84,7 @@ public:
 		totalMarks = courseworkMarks + finalExamMarks;
 	}
 
+	//Function of printing student marks and grade
 	void print() const
 	{
 		cout << left << setw(10) << id

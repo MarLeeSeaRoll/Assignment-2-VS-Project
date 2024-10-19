@@ -25,6 +25,7 @@ int main()
 		displayMenu();
 		choice = ValidateUpdateMarks<int>(1, 3);
 
+		//Body of Main menu
 		switch (choice) 
 		{
 		case 1:
@@ -34,7 +35,7 @@ int main()
 		case 2: 
 			{
 			string id;
-			double coursework, finalExam;
+			double coursework=0.0, finalExam=0.0;
 
 			cout << "Enter student ID to update: ";
 			cin >> id;
@@ -76,6 +77,7 @@ int main()
 			}
 			break;
 		}
+
 		case 3: {
 			cout << "Exiting program.\n";
 			endProgram(continueExecuting);

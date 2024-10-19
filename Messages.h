@@ -9,7 +9,7 @@ main options menu and options menu for update marks*/
 
 using namespace std;
 
-//Welcome meaasge block
+//Welcome message block
 void printWelcomeMessage()
 {
 	cout << "+-------------------------------------------------+\n";
