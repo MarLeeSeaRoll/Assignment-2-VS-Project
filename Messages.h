@@ -19,10 +19,7 @@ void displayMenu(){
         cout << "\nMenu:\n";
         cout << "1. Print All Students\n";
         cout << "2. Update Student Marks\n";
-        cout << "3. Show Highest Scorer\n";
-        cout << "4. Calculate Average Marks\n";
-        cout << "5. Calculate Pass Rate\n";
-        cout << "6. Exit\n";
+        cout << "3. Exit\n";
         cout << "Enter your choice: ";
 }
 

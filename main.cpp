@@ -7,98 +7,78 @@
 using namespace std;
 
 int main() {
-    LinkedList<Student> studentList;
+	LinkedList<Student> studentList;
 
-    printWelcomeMessage();
+	printWelcomeMessage();
 
-    int choice;
-    bool continueExecuting = true;
+	int choice;
+	bool continueExecuting = true;
 
-    programStartQuit(continueExecuting);
+	programStartQuit(continueExecuting);
 
-    // Read student data from file
-    readFileAndStoreData(studentList, "studentData.txt");
-	
+	// Read student data from file
+	readFileAndStoreData(studentList, "studentData.txt");
+
 	while (continueExecuting)
 	{
 		displayMenu();
-        choice = ValidateUpdateMarks<int>(1, 6);
+		choice = ValidateUpdateMarks<int>(1, 3);
 
-        switch (choice) {
-            case 1:
-                studentList.printAll();
-                break;
+		switch (choice) {
+		case 1:
+			studentList.printAll();
+			break;
 
-            case 2: {
-                string id;
-                double coursework, finalExam;
+		case 2: {
+			string id;
+			double coursework, finalExam;
 
-                cout << "Enter student ID to update: ";
-                cin >> id;
+			cout << "Enter student ID to update: ";
+			cin >> id;
 
-                Student* student = studentList.findById(id);
-                if (student)
-                {
-                    updateMarkMenu();
-                    int updateChoice; 
-                    updateChoice = ValidateUpdateMarks<int>(1, 3);
+			Student* student = studentList.findById(id);
+			if (student)
+			{
+				updateMarkMenu();
+				int updateChoice;
+				updateChoice = ValidateUpdateMarks<int>(1, 3);
 
-                    switch(updateChoice){
-                        case 1:
-                            cout << "Enter new coursework marks (0 - 50): ";
-                            coursework = ValidateUpdateMarks<double>(0.0, 50.0);
-                            break;
+				switch (updateChoice) {
+				case 1:
+					cout << "Enter new coursework marks (0 - 50): ";
+					coursework = ValidateUpdateMarks<double>(0.0, 50.0);
+					break;
 
-                        case 2:
-                            cout << "Enter new final exam marks (0 - 50): ";
-                            finalExam = ValidateUpdateMarks<double>(0.0, 50.0);
-                            break;
+				case 2:
+					cout << "Enter new final exam marks (0 - 50): ";
+					finalExam = ValidateUpdateMarks<double>(0.0, 50.0);
+					break;
 
-                        case 3:
-                            cout << "Enter new coursework marks (0 - 50): ";
-                            coursework = ValidateUpdateMarks<double>(0.0, 50.0);
+				case 3:
+					cout << "Enter new coursework marks (0 - 50): ";
+					coursework = ValidateUpdateMarks<double>(0.0, 50.0);
 
-                            cout << "Enter new final exam marks (0 - 50): ";
-                            finalExam = ValidateUpdateMarks<double>(0.0, 50.0);
-                            break;
-                    }
+					cout << "Enter new final exam marks (0 - 50): ";
+					finalExam = ValidateUpdateMarks<double>(0.0, 50.0);
+					break;
+				}
 
-                    student->updateMarks(coursework, finalExam);
-                    cout << "Marks updated!\n";             } 
-                else 
-                {
-                    cout << "Student not found.\n";
-                }
-                break;
-            }
-
-            case 3: {
-                Student* topStudent = getHighestScorer(studentList);
-                if (topStudent) {
-                    cout << "Highest Scorer:\n";
-                    topStudent->print();
-                } else {
-                    cout << "No students found.\n";
-                }
-                break;
-            }
-
-            case 4: {
-                calculateAverageMarks(studentList);
-                break;
-            }
-
-            case 5: {
-                calculatePassRate(studentList);
-                break;
-            }
-            
-            case 6: {
-                cout << "Exiting program.\n";
-                endProgram(continueExecuting);
-            }
-        }
+				student->updateMarks(coursework, finalExam);
+				cout << "Marks updated!\n";
+				studentList.printAll();
+			}
+			else
+			{
+				cout << "Student not found.\n";
+			}
+			break;
+		}
+		case 3: {
+			cout << "Exiting program.\n";
+			endProgram(continueExecuting);
+		}
+		}
 	}
 
-    return 0;
+	return 0;
 }
