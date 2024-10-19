@@ -36,7 +36,7 @@ int main() {
 			cout << "Enter student ID to update: ";
 			cin >> id;
 
-			Student* student = studentList.findById(id);
+			Student* student =findById(studentList,id);
 			if (student)
 			{
 				updateMarkMenu();

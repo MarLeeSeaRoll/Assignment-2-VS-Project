@@ -49,18 +49,6 @@ public:
 		return head;
 	}
 
-	// Find a student by ID
-	T* findById(string id) {
-		Node<T>* temp = head;
-		while (temp) {
-			if (temp->data.getId() == id) {
-				return &(temp->data);
-			}
-			temp = temp->next;
-		}
-		return NULL;
-	}
-
 	// Destructor to clean up memory
 	~LinkedList() {
 		Node<T>* temp = head;

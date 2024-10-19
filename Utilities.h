@@ -17,6 +17,8 @@ V ValidateUpdateMarks(V lowerLimit, V upperLimit);
 
 void printAll(const LinkedList<Student>& studentList);
 
+Student* findById(const LinkedList<Student>& studentList, const string& id);
+
 // Function Definitions
 
 void programStartQuit(bool &continueExecuting)
@@ -124,6 +126,18 @@ void printAll(const LinkedList<Student>& studentList) {
 	cout << "----------------------------------------------\n";
 	topStudent->data.print();
 	cout << endl;
+}
+
+// Find a student by ID
+Student* findById(const LinkedList<Student>& studentList, const string & id) {
+	Node<Student>* temp = studentList.getHead();
+	while (temp) {
+		if (temp->data.getId() == id) {
+			return &(temp->data);
+		}
+		temp = temp->next;
+	}
+	return NULL;
 }
 
 #endif
